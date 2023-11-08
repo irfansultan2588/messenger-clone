@@ -69,7 +69,7 @@ const AuthForm = () => {
             label="Password"
             type="password"
             register={register}
-            errors={errors}
+            errors={errors} 
             disabled={isLoading}
           />
           <div>
