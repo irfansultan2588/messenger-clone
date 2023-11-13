@@ -66,7 +66,6 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         `
       w-full 
       relative 
-      p-3 
       flex 
       items-center 
       space-x-3 
@@ -74,6 +73,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
       rounded-lg
       transition
       cursor-pointer
+      p-3
       `,
         selected ? "bg-neutral-100" : "bg-white"
       )}
@@ -87,7 +87,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
              </p>
              {lastMessage?.createdAt && (
                 <p className="text-xs text-gray-400 font-light">
-                    {format(new Date(lastMessage.createdAt), 'p ')}
+                    {format(new Date(lastMessage.createdAt), 'p')}
                 </p>
              )}
             </div>
@@ -104,6 +104,6 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
       </div>
     </div>
   );
-};
+}
 
 export default ConversationBox;
