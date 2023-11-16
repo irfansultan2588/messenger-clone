@@ -17,23 +17,23 @@ const Form = () => {
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
-      message: "",
-    },
+      message: ""
+    }
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    setValue("message", "", { shouldValidate: true });
+    setValue("message", '', { shouldValidate: true });
     axios.post("/api/messages", {
       ...data,
-      conversationId,
-    });
-  };
+      conversationId: conversationId
+    })
+  }
 
 
   const handleUpload = (result: any) => {
     axios.post('/api/messages', {
-      image: result?.info?.secure_url,
-      conversationId
+      image: result.info.secure_url,
+      conversationId: conversationId,
     })
   }
 

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 interface MessageInputProps {
@@ -40,6 +39,6 @@ const MessageInput: React.FC<MessageInputProps> = ({
       />
     </div>
   );
-};
+}
 
 export default MessageInput;

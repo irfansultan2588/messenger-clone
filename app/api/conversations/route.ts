@@ -9,10 +9,10 @@ export async function POST(request: Request) {
     const { userId, isGroup, members, name } = body;
 
     if (!currentUser?.id || !currentUser?.email) {
-      return new NextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Unauthorized", { status: 400 });
     }
-    if (isGroup && (!members || members.lenght < 2 || !name)) {
-      return new NextResponse("Invalid Data", { status: 400 });
+    if (isGroup && (!members || members.length  < 2 || !name)) {
+      return new NextResponse("Invalid data", { status: 400 });
     }
     if (isGroup) {
       const newConversation = await prisma.conversation.create({
@@ -26,9 +26,9 @@ export async function POST(request: Request) {
               })),
               {
                 id: currentUser.id,
-              },
-            ],
-          },
+              }
+            ]
+          }
         },
         include: {
           users: true,
