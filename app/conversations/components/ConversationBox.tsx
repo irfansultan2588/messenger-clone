@@ -5,13 +5,13 @@ import { Conversation, Message, User } from "@prisma/client";
 import { format } from "date-fns";
 import { useSession } from "next-auth/react";
 import clsx from "clsx";
-import { fullConversationType } from "@/app/types";
+import { FullConversationType } from "@/app/types";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import Avatar from "@/app/components/Avatar";
 import AvatarGroup from "@/app/components/AvatarGroup";
 
 interface ConversationBoxProps {
-  data: fullConversationType;
+  data: FullConversationType;
   selected?: boolean;
 }
 
