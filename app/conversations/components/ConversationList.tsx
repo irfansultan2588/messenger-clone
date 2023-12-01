@@ -26,6 +26,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
 
   const [items, setItems] = useState(initialItems);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const router = useRouter();
   const { conversationId, isOpen } = useConversation();
 
@@ -60,20 +61,36 @@ const ConversationList: React.FC<ConversationListProps> = ({
           }
         }
         return currentConversation;
-      }))
+      }));
     }
+
+    const removeHandler = (conversation: FullConversationType) => {
+      setItems((current) => {
+        return [...current.filter((convo) => convo.id !== conversation.id)]
+      });
+      
+      if(conversationId === conversation.id) {
+        router.push('/conversations');
+      }
+    };
+      
+
 
     pusherClient.bind("conversation:new", newHandler)
     pusherClient.bind("conversation:update", updateHandler)
+    pusherClient.bind("conversation:remove", removeHandler)
     
     return () => {
       pusherClient.unsubscribe(pusherkey);
       pusherClient.unbind("conversation:new", newHandler)
       pusherClient.unbind("conversation:update", updateHandler);
+      pusherClient.unbind("conversation:remove", removeHandler);
     }
 
 
-  },[pusherkey])
+  },[pusherkey, conversationId, router]);
+
+
   return (
     <>
     <GroupChatModal users={users} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
