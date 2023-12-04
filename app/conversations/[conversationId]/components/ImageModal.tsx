@@ -6,7 +6,7 @@ interface ImageModalProps {
     src?: string | null;
 }
 
-import Modal from '@/app/components/Modal';
+import Modal from '@/app/components/modals/Modal';
 import Image from "next/image"
 import React from 'react'
 

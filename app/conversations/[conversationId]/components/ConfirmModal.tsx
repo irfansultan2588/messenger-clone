@@ -1,6 +1,6 @@
 "use client";
 
-import Modal from "@/app/components/Modal";
+import Modal from "@/app/components/modals/Modal";
 import useConversation from "@/app/hooks/useConversation";
 import axios from "axios";
 import { useRouter } from "next/navigation";

@@ -41,7 +41,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     if (data.isGroup) {
       return `${data.users.length} members`;
     }
-    return isActive ? "Active": "offline";
+    return isActive ? "Active" : "offline";
   }, [data, isActive]);
 
   return (
@@ -122,8 +122,14 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                             <dl className="space-y-8 px-4 sm:space-y-6 sm:px-6">
                               {data.isGroup && (
                                 <div>
-                                  <dt className="text:sm font-medium text-gray-500 sm:40 sm:flex-shrink-0">Emails</dt>
-                                  <dd className="mt-1 text:sm texxt-gray-900 sm:col-span-2">{data.users.map((user) => user.email).join(', ')}</dd>
+                                  <dt className="text:sm font-medium text-gray-500 sm:40 sm:flex-shrink-0">
+                                    Emails
+                                  </dt>
+                                  <dd className="mt-1 text:sm texxt-gray-900 sm:col-span-2">
+                                    {data.users
+                                      .map((user) => user.email)
+                                      .join(", ")}
+                                  </dd>
                                 </div>
                               )}
                               {!data.isGroup && (

@@ -1,7 +1,6 @@
 "use client";
 import { useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { Conversation, Message, User } from "@prisma/client";
 import { format } from "date-fns";
 import { useSession } from "next-auth/react";
 import clsx from "clsx";
@@ -24,7 +23,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
   const router = useRouter();
 
   const handleClick = useCallback(() => {
-    router.push(`conversations/${data.id}`);
+    router.push(`/conversations/${data.id}`);
   }, [data.id, router]);
 
   const lastMessage = useMemo(() => {

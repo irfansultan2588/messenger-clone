@@ -19,17 +19,17 @@ export async function POST(request: Request) {
         image: image,
         conversation: {
           connect: {
-            id: conversationId,
+            id: conversationId
           },
         },
         sender: {
           connect: {
-            id: currentUser.id,
+            id: currentUser.id
           },
         },
         seen: {
           connect: {
-            id: currentUser.id,
+            id: currentUser.id
           },
         },
       },

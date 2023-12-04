@@ -1,4 +1,4 @@
-import LoadingModal from '../components/LoadingModal'
+import LoadingModal from '../components/modals/LoadingModal'
 
 const loading = () => {
   return (
