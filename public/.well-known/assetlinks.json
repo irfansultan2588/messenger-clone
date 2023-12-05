@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.messenger_clone_nine_pink.twa",
+        "sha256_cert_fingerprints": ["43:BA:79:78:CD:19:53:99:16:24:F0:52:A5:48:7D:F7:1A:70:24:22:F4:76:31:EF:29:75:66:0B:B2:96:29:94"]
+      }
+    }]

@@ -12,18 +12,15 @@ export const metadata: Metadata = {
   description: "Messenger Clone",
 };
 
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode; 
 }) {
   return (
     <html lang="en">
-        <script>
-          if (typeof navigator.serviceWorker !== 'undefined')
-          {navigator.serviceWorker.register("sw.js")}
-        </script>
-      <link rel="manifest" href="/manifest.json" />
+      {/* <link rel="manifest" href="/manifest.json" /> */}
       <body className={inter.className}>
         <AuthContext>
           <ToasterContext />
@@ -31,6 +28,11 @@ export default function RootLayout({
           {children}
         </AuthContext>
       </body>
+      {/* <script>
+          if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register("sw.js")
+          }
+        </script> */}
     </html>
   );
 }
