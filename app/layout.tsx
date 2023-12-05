@@ -19,14 +19,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+        <script>
+          if (typeof navigator.serviceWorker !== 'undefined')
+          {navigator.serviceWorker.register("sw.js")}
+        </script>
       <link rel="manifest" href="/manifest.json" />
       <body className={inter.className}>
         <AuthContext>
-        <ToasterContext />
-        <ActiveStatus />
-        {children}
+          <ToasterContext />
+          <ActiveStatus />
+          {children}
         </AuthContext>
-        </body>
+      </body>
     </html>
   );
 }
