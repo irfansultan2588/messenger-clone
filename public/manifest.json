@@ -1,12 +1,12 @@
 {
-    "theme_color": "#000000",
-    "background_color": "#425880",
+    "theme_color": "#f69435",
+    "background_color": "#f69435",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
     "name": "Messenger",
     "short_name": "Messenger",
-    "description": "Messenger Clone",
+    "description": "Pword by Irfan Shaikh",
     "icons": [
         {
             "src": "/icon-192x192.png",
